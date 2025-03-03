@@ -1,0 +1,515 @@
+/* 🔹 Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    background: #121212;
+    color: white;
+    position: relative;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+    padding-top: 80px; /* Padding untuk mencegah konten tertutup navbar */
+}
+
+body.light-mode {
+    background: #f8f9fa;
+    color: #212529;
+}
+
+/* 🔹 Navbar */
+.navbar {
+    background: rgba(20, 20, 20, 0.7) !important;
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    margin: 10px auto;
+    width: 95%;
+    padding: 10px 20px;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    position: fixed; /* Navbar tetap di atas */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.navbar-profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: white !important;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-right: 15px;
+    color: white !important;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+    color: #f8d210 !important;
+    border-bottom: 2px solid #f8d210;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f39c12 !important; /* Warna saat hover */
+}
+
+/* 🔹 Light Mode Navbar */
+body.light-mode .navbar {
+    background: rgba(255, 255, 255, 0.6) !important;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .navbar-brand,
+body.light-mode .navbar-nav .nav-link {
+    color: black !important;
+}
+
+/* 🔹 Navbar Responsif */
+@media (max-width: 992px) {
+    .navbar {
+        width: 100%;
+        border-radius: 0;
+        margin: 0;
+        padding: 8px 15px;
+    }
+
+    .navbar-nav {
+        text-align: center;
+        flex-wrap: wrap;
+    }
+
+    .navbar-nav .nav-item {
+        margin-bottom: 10px;
+        width: 100%; /* Nav item mengambil semua lebar */
+    }
+
+    body {
+        padding-top: 100px; /* Padding lebih besar untuk konten di perangkat sempit */
+    }
+}
+
+/* 🔹 Animasi Layar "Halo" */
+.halo-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Penuh layar */
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 4rem;
+    font-weight: 600;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+/* 🔹 Layout Profil */
+.profile-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 10vw;
+    gap: 100px; /* Ruang antar item */
+    text-align: center;
+}
+
+/* 🔹 Gaya Gambar Profil */
+.profile-img {
+    width: 30vw;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi saat hover */
+}
+
+.profile-img:hover {
+    transform: scale(1.05); /* Perbesar saat hover */
+    box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.5);
+}
+
+/* 🔹 Gaya Teks Profil */
+.profile-content {
+    font-size: 2rem;
+    max-width: 600px; /* Maksimal lebar konten */
+}
+
+/* 🔹 Tombol Kontak */
+.contact-btn {
+    padding: 12px 35px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px; /* Marjin atas */
+}
+
+.contact-btn:hover {
+    transform: scale(1.1); /* Perbesar tombol saat hover */
+    background: rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* 🔹 Sembunyikan Tombol Mode */
+#toggleModeBtn {
+    display: none; /* Sembunyikan tombol mode */
+}
+
+/* 🔹 Section Tentang Saya */
+.about-section {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 15px; /* Sudut melengkung */
+    padding: 40px;
+    margin: 50px 0; /* Marjin atas dan bawah */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Bayangan */
+}
+
+.about-section h2 {
+    font-size: 2.5rem; /* Ukuran font judul */
+    color: #ffffff; /* Warna teks */
+    margin-bottom: 1rem; /* Janur bawah */
+}
+
+/* 🔹 Style Card */
+.profile-card {
+    background: #222; /* Latar belakang */
+    border-radius: 15px; /* Sudut melengkung */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi */
+    overflow: hidden; /* Tersembunyi overflow */
+    text-align: center; /* Teks berada di tengah */
+}
+
+.profile-card:hover {
+    transform: scale(1.05); /* Perbesar saat hover */
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3); /* Bayangan saat hover */
+}
+
+.profile-card img {
+    border-top-left-radius: 15px; /* Sudut melengkung pada gambar */
+    border-top-right-radius: 15px; /* Sudut melengkung pada gambar */
+}
+
+/* 🔹 Skill Bar */
+.skill {
+    margin-bottom: 15px; /* Marjin bawah */
+}
+
+/* 🔹 Instagram Button */
+.ig-btn {
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s; /* Transisi saat hover */
+}
+
+.ig-btn:hover {
+    background: #5f30e1; /* Warna latar belakang saat hover */
+    color: white; /* Warna teks saat hover */
+}
+
+/* 🔹 Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .profile-section {
+        flex-direction: column; /* Kolom pada layar kecil */
+        gap: 40px; /* Ruang antar item */
+        padding: 5vw; /* Padding lebih kecil */
+    }
+
+    .profile-img {
+        width: 50vw; /* Lebar gambar di layar kecil */
+        max-width: 280px; /* Maksimal lebar */
+    }
+
+    .profile-content {
+        font-size: 1.4rem; /* Ukuran font kecil */
+    }
+
+    .about-section {
+        padding: 20px; /* Padding kecil */
+        text-align: center; /* Teks berada di tengah */
+    }
+
+    .about-section h2 {
+        font-size: 1.8rem; /* Ukuran font judul lebih kecil */
+    }
+}
+
+/* 🔹 Mode Ekstra Kecil */
+@media (max-width: 480px) {
+    .halo-screen {
+        font-size: 2rem; /* Ukuran font lebih kecil */
+    }
+
+    .profile-section {
+        padding: 3vw; /* Padding lebih kecil */
+        gap: 30px; /* Ruang antar item */
+    }
+
+    .profile-img {
+        width: 70vw; /* Lebar gambar di layar kecil */
+        max-width: 200px; /* Maksimal lebar */
+    }
+
+    .profile-content {
+        font-size: 1.2rem; /* Ukuran font lebih kecil */
+    }
+
+    .contact-btn {
+        font-size: 1rem; /* Ukuran tombol lebih kecil */
+        padding: 8px 20px; /* Padding lebih kecil */
+    }
+
+    .skill {
+        margin-bottom: 10px; /* Marjin bawah lebih kecil */
+    }
+
+    .ig-btn {
+        font-size: 0.9rem; /* Ukuran font tombol lebih kecil */
+        padding: 8px 15px; /* Padding lebih kecil */
+    }
+}
+
+/* 🔹 Background Pattern */
+.background-pattern {
+    position: absolute; /* Posisi absolut */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Pastikan mencakup profil */
+    z-index: -1; /* Pastikan berada di belakang konten */
+    pointer-events: none; /* Tidak dapat berinteraksi */
+    opacity: 0.3; /* Transparansi */
+}
+
+.background-pattern svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* 🔹 Fix agar background menyatu dengan Profil */
+.profile-section {
+    position: relative; /* Supaya tetap di atas background */
+    z-index: 1; /* Menjaga di atas background */
+}
+
+/* 🔹 Section Projek */
+.projects-section {
+    padding: 80px 0; /* Padding untuk section */
+    background-color: #121212; /* Latar belakang section */
+    color: white; /* Warna teks */
+}
+
+/* Judul Projek */
+.projects-title {
+    font-size: 2.5rem; /* Ukuran font judul */
+    margin-bottom: 40px; /* Marjin bawah */
+}
+
+/* Container untuk Carousel */
+.carousel-container {
+    position: relative; /* Posisi relatif untuk anak */
+}
+
+/* Gaya untuk gambar dalam carousel */
+.project-img {
+    width: 100%; /* Mengisi lebar wadah */
+    height: auto; /* Tinggi otomatis sesuai proporsi */
+    max-height: 70vh; /* Batasi tinggi gambar */
+    object-fit: cover; /* Mempertahankan rasio aspek tanpa distorsi */
+    transition: transform 0.5s ease; /* Animasi pergeseran */
+    cursor: pointer; /* Cursor pointer untuk klik */
+}
+
+/* Animasi saat gambar aktif */
+.carousel-item.active .project-img {
+    transform: scale(1.05); /* Sedikit memperbesar gambar saat aktif */
+}
+
+/* Animasi pergeseran */
+.carousel-item {
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in; /* Transisi untuk pergeseran dan opacity */
+}
+
+.carousel-item-next,
+.carousel-item-prev {
+    display: block; /* Tampilkan item berikut dan sebelumnya */
+    opacity: 0; /* Mengawali dengan opacity 0 */
+    transform: scale(0.95); /* Sedikit mengecilkan gambar sebelumnya */
+}
+
+.carousel-item-next.carousel-item-active,
+.carousel-item-prev.carousel-item-active {
+    opacity: 1; /* Gambar aktif harus tampak */
+    transform: scale(1); /* Ukuran normal gambar aktif */
+}
+
+.carousel-inner {
+    overflow: hidden; /* Pastikan overflow tersembunyi untuk menjaga border radius */
+}
+
+/* Card Shadow di belakang gambar */
+.carousel-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Warna latar belakang card */
+    border-radius: 10px; /* Sudut melengkung */
+    z-index: -1; /* Agar berada di belakang gambar carousel */
+}
+
+/* Tombol Geser */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #000; /* Warna latar belakang tombol */
+    border-radius: 50%; /* Bulatkan tombol */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%; /* Sesuaikan lebar tombol */
+}
+
+/* Caption di dalam carousel */
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.7); /* Background semi-transparan untuk caption */
+    padding: 8px; /* Padding untuk caption */
+    border-radius: 5px; /* Sudut melengkung */
+    position: absolute; /* Pastikan posisi absolut */
+    bottom: 10%; /* Atur posisi caption sedikit di atas bagian bawah */
+    left: 50%; /* Posisikan di tengah horizontal */
+    transform: translateX(-50%); /* Geser ke kiri setengah dari lebar caption */
+}
+
+/* Untuk menyesuaikan ukuran font */
+.carousel-caption h5 {
+    font-size: 1.1rem; /* Ukuran judul lebih kecil di ponsel */
+}
+
+.carousel-caption p {
+    font-size: 0.8rem; /* Ukuran detail lebih kecil di ponsel */
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .projects-title {
+        font-size: 2rem; /* Ganti ukuran font untuk perangkat kecil */
+    }
+
+    .project-img {
+        max-height: 50vh; /* Batasi tinggi gambar pada layar kecil */
+    }
+
+    .carousel-caption {
+        padding: 6px; /* Padding lebih kecil pada perangkat kecil */
+        bottom: 15%; /* Geser lebih ke atas jika diperlukan */
+    }
+
+    .carousel-caption h5 {
+        font-size: 1rem; /* Ukuran judul lebih kecil di ponsel */
+    }
+
+    .carousel-caption p {
+        font-size: 0.7rem; /* Ukuran detail lebih kecil di ponsel */
+    }
+}
+
+/* Mode Ekstra Kecil untuk tampilan di ponsel */
+@media (max-width: 480px) {
+    .carousel-caption {
+        padding: 2px; /* Padding lebih kecil pada perangkat kecil */
+        bottom: 15%; /* Geser caption untuk tidak menutupi gambar */
+    }
+
+    .carousel-caption h5 {
+        font-size: 0.9rem; /* Ukuran judul lebih kecil di ponsel */
+    }
+
+    .carousel-caption p {
+        font-size: 0.6rem; /* Ukuran detail lebih kecil di ponsel */
+    }
+}
+
+/* Kelas untuk tombol kustom */
+.btn-custom {
+    background-color: rgba(44, 44, 44, 0.8); /* Warna gelap semi-transparan */
+    color: white; /* Warna teks putih */
+    border: none; /* Menghilangkan border */
+    transition: background-color 0.3s ease; /* Tambahan efek transisi */
+}
+
+.btn-custom:hover {
+    background-color: rgb(0, 0, 0); /* Warna lebih gelap saat hover */
+}
+
+/* Modal fade animation */
+.modal.fade .modal-dialog {
+    position: fixed; /* Pastikan modal dialog terletak tetap di tengah */
+    top: 50%; /* Posisikan pada 50% dari bagian atas */
+    left: 50%; /* Posisikan pada 50% dari bagian kiri */
+    transform: translate(-50%, -50%) scale(0.5); /* Posisikan di tengah dan perkecil awalnya */
+    opacity: 0; /* Awalnya tidak terlihat */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transisi untuk opacity dan transform */
+}
+
+.modal.fade.show .modal-dialog {
+    opacity: 1; /* Modal terlihat */
+    transform: translate(-50%, -50%) scale(1); /* Kembalikan ke posisi normal dan ukuran normal */
+}
+
+.modal-backdrop.fade {
+    opacity: 0.5; /* Atur transparansi belakang modal */
+    transition: opacity 0.3s ease; /* Efek belakang */
+}
+
+.modal-backdrop.show {
+    opacity: 0.5; /* Saat modal muncul, latar belakang harus terlihat */
+}
+
+footer {
+    width: 100%; /* Pastikan footer memenuhi penuh lebar layar */
+    position: relative; /* Posisi relatif untuk footer */
+    padding: 10px 0; /* Padding yang lebih kecil untuk perangkat sempit */
+    margin-top: 20px; /* Menjaga jarak dari konten di atas */
+    background-color: rgba(20, 20, 20, 0.9); /* Warna latar belakang yang sesuai */
+    color: white; /* Warna teks footer */
+    text-align: center; /* Teks di tengah */
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    footer {
+        padding: 5px 0; /* Mengurangi padding footer pada layar kecil */
+        font-size: 0.9rem; /* Ukuran font lebih kecil pada layar kecil */
+    }
+}
+
+/* Menambah animasi hover pada gambar proyek */
+.project-img {
+    cursor: pointer; /* Menunjukkan elemen dapat diklik */
+    transition: transform 0.3s ease; /* Transisi untuk animasi zoom */
+}
+
+.project-img:hover {
+    transform: scale(0.95); /* Perkecil ukuran gambar saat hover */
+    /* Anda juga bisa menambahkan efek lain, seperti bayangan */
+}

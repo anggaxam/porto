@@ -1,0 +1,116 @@
+Dokumentasi Website Portofolio
+
+Struktur Website Portofolio
+
+Website portofolio ini akan memiliki empat halaman utama:
+
+Profil (Landing Page - Halaman Awal)
+
+Tentang Saya
+
+Skill
+
+Projek
+
+1. Profil (Landing Page - Halaman Awal)
+
+Fungsi:
+
+Memberikan kesan pertama tentang diri pemilik website.
+
+Menampilkan foto, nama, dan deskripsi singkat.
+
+Bisa ada animasi atau efek menarik.
+
+Elemen yang Dibutuhkan:
+
+Foto profil
+
+Nama lengkap & tagline (contoh: "Full Stack Developer | Problem Solver")
+
+Deskripsi singkat (1-2 kalimat tentang diri pemilik)
+
+Tombol navigasi ke halaman lain
+
+Teknologi yang Digunakan:
+
+HTML + CSS untuk tampilan
+
+JavaScript untuk efek animasi
+
+Bootstrap/Tailwind untuk desain responsif
+
+2. Tentang Saya
+
+Fungsi:
+
+Menjelaskan lebih dalam tentang pemilik website, pengalaman, dan latar belakang.
+
+Bisa mencantumkan CV atau cerita perjalanan karier.
+
+Elemen yang Dibutuhkan:
+
+Paragraf deskripsi tentang perjalanan dan pengalaman pemilik.
+
+Foto atau ilustrasi pendukung.
+
+Tombol untuk mengunduh CV (jika ada).
+
+Teknologi yang Digunakan:
+
+HTML + CSS untuk tampilan
+
+JavaScript untuk efek interaktif
+
+3. Skill
+
+Fungsi:
+
+Menampilkan keahlian pemilik di bidang frontend, backend, atau lainnya.
+
+Bisa dalam bentuk ikon atau progress bar.
+
+Elemen yang Dibutuhkan:
+
+Daftar teknologi yang dikuasai (contoh: HTML, CSS, JavaScript, PHP, Laravel, MySQL, dll.)
+
+Ikon atau logo teknologi.
+
+Progress bar atau rating (contoh: 80% untuk PHP, 90% untuk JavaScript).
+
+Teknologi yang Digunakan:
+
+HTML + CSS untuk layout
+
+JavaScript untuk animasi progress bar
+
+4. Projek
+
+Fungsi:
+
+Showcase hasil kerja atau proyek yang pernah dibuat.
+
+Bisa berupa gambar, deskripsi, dan link ke live demo atau GitHub.
+
+Elemen yang Dibutuhkan:
+
+Kartu proyek (berisi gambar, judul, deskripsi singkat, dan link ke proyek).
+
+Tombol untuk melihat lebih banyak proyek (jika jumlah proyek banyak).
+
+Teknologi yang Digunakan:
+
+HTML + CSS untuk grid layout proyek.
+
+JavaScript untuk filter proyek (opsional).
+
+Tambahan (Opsional, Jika Mau Ditingkatkan)
+
+Dark mode
+
+Form kontak
+
+CMS atau database untuk menyimpan proyek secara dinamis
+
+Dokumentasi ini dapat digunakan sebagai referensi dalam pembuatan website portofolio yang rapi dan profesional.
+
